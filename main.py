@@ -223,7 +223,12 @@ class Offer(BaseModel):
     description: str | None = None
     price: float
     items: list[Item]
-
+#/offers (HTTP POST): It creates an offer. The endpoint takes an offer of type Offer from the request body.
+#The embed=True parameter with Body indicates that the offer should be embedded in the request body. It returns the created offer.
+#/images/multiple (HTTP POST): It creates multiple images. The endpoint takes a list of Image objects from the request body. 
+#It returns the list of created images.
+#/blah (HTTP POST): It creates some blahs. The endpoint takes a dictionary with keys of type int and values of type float from the request body.
+#It returns the dictionary of blahs.
 
 @app.put("/items/{item_id}")
 async def update_item(item_id: int, item: Item):
